@@ -2,6 +2,7 @@ import random
 from genk import generate_key
 from readP import read_plaintext
 from mono import mono
+from solve import solve
 
 
 def main():
@@ -15,6 +16,9 @@ def main():
     ciphertext = mono(key, plaintext, 0.05)
     print(ciphertext)
     print(len(ciphertext))
+    guess = solve(plaintext_l, ciphertext)
+    print(f"guess: {guess}")
+    print(f"{plaintext_l[guess]}")
 
 
 if __name__ == '__main__':
